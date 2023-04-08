@@ -7,6 +7,7 @@ const app = express();
 
 const loaihoaRoute = require("./router/loaihoas");
 const hoaRoute = require("./router/hoas.js");
+const nguoidungRoute = require('./router/nguoidungs')
 require("dotenv").config();
 
 app.use(bodyParser.json());
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/loaihoas", loaihoaRoute);
 app.use("/hoas", hoaRoute);
+app.use("/nguoidungs", nguoidungRoute);
 
 // Connect to database
 console.log(process.env.DB_CONECTION);
